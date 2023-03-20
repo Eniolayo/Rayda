@@ -20,6 +20,20 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    gray: {
+      // 100: "#EAECF0",
+      200: "#475467",
+      300: "#EAECF0",
+      400: "#D0D5DD",
+      600: "#475467",
+      700: "#344054",
+      900: "#101828",
+    },
+    warning: {
+      50: "#FFFAEB",
+      500: "#F79009",
+      700: "#B54708",
+    },
   },
   typography: {
     fontFamily: IBMPlexSans.style.fontFamily,
@@ -27,3 +41,9 @@ const theme = createTheme({
 });
 
 export default theme;
+/*
+box-shadow: 0px 1px 2px 0px #1018280F;
+
+box-shadow: 0px 1px 3px 0px #1018281A;
+
+*/
