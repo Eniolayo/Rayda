@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 
 export default function Home() {
@@ -151,14 +150,11 @@ export default function Home() {
       </Box>
     );
   }
-  return (
-    <Stack width={"95%"} marginX="auto">
-      <Header />
-      <ActionCard />
+  function FeaturedItems() {
+    return (
       <Box
         mt={6}
         p="23px"
-        pb="10px"
         border={"1px solid"}
         borderColor="gray.300"
         borderRadius={"12px"}
@@ -192,44 +188,116 @@ export default function Home() {
             View Auction
           </Button>
         </Stack>
-        <Card
-          variant="outlined"
-          sx={{ width: 350, padding: 2, marginBlockStart: 8, borderRadius: 4 }}
+        <Stack
+          direction={"row"}
+          flexWrap="wrap"
+          justifyContent={"space-between"}
+          mt={3}
+          gap="20px"
         >
-          <Box height={140} position="relative">
-            <Image src="/lappy.png" alt="laptop" fill />
-          </Box>
-          <Stack direction={"row"} alignItems="center" mt={1} spacing={"6px"}>
-            <Avatar>KO</Avatar>
-            <Typography fontSize="md" sx={{ mb: 0.5 }}>
-              Koray Okumus{" "}
-              <Typography color="#98A2B3">(Highest Bidder)</Typography>
-            </Typography>
-          </Stack>
-          <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
-            Apple MacBook Air 13" M1 Chip 8GB 256GB 2020 Model - Rose Gold
-          </Typography>
-          <Typography level="body2">Current Bid:</Typography>
-
-          <Box sx={{ display: "flex" }}>
-            <div>
-              <Typography level="body3">Total price:</Typography>
-              <Typography fontSize="lg" fontWeight="lg">
-                $2,900
-              </Typography>
-            </div>
-            <Button
-              variant="solid"
-              size="sm"
-              color="primary"
-              aria-label="Explore Bahamas Islands"
-              sx={{ ml: "auto", fontWeight: 600 }}
+          {Array.from({ length: 9 }).map((_, i) => (
+            <Card
+              variant="outlined"
+              sx={{
+                width: 330,
+                padding: 2,
+                borderRadius: 4,
+              }}
+              key={i}
             >
-              Add to wishlist
-            </Button>
-          </Box>
-        </Card>
+              <Box height={140} position="relative">
+                <Image src="/lappy.png" alt="laptop" fill />
+              </Box>
+              <Stack
+                direction={"row"}
+                alignItems="center"
+                mt={1.5}
+                spacing={"6px"}
+              >
+                <Avatar
+                  sx={{
+                    width: 22,
+                    height: 22,
+                    fontSize: 13,
+                    padding: 2,
+                    background: "#F2F4F7",
+                    color: "#344054",
+                  }}
+                >
+                  KO
+                </Avatar>
+                <Typography fontSize={15} fontWeight="600" color="gray.900">
+                  Koray Okumus{" "}
+                </Typography>
+                <Typography color="gray.100" fontSize={13} fontWeight="400">
+                  (Highest Bidder)
+                </Typography>
+              </Stack>
+              <Typography
+                level="h4"
+                mt={1.5}
+                color="gray.900"
+                fontSize={16}
+                fontWeight="600"
+                lineHeight={"20px"}
+              >
+                Apple MacBook Air 13" M1 Chip 8GB 256GB 2020 Model - Rose Gold
+              </Typography>
+
+              <Stack
+                direction={"row"}
+                mt={1}
+                borderBottom="1px solid"
+                borderColor={"gray.300"}
+                pb={1}
+                alignItems="center"
+              >
+                <Typography
+                  level="body2"
+                  color="gray.700"
+                  fontSize={"14px"}
+                  fontWeight="400"
+                >
+                  Current Bid:
+                </Typography>
+                <Typography fontSize={"15px"} fontWeight="600" color="gray.700">
+                  ₦795,000
+                </Typography>
+              </Stack>
+              <Button
+                variant="solid"
+                size="sm"
+                color="primary"
+                aria-label="Explore Bahamas Islands"
+                sx={{
+                  borderRadius: "8px",
+                  fontWeight: 600,
+                  width: "100%",
+                  marginBlockStart: 1,
+                  background: "#004CCC",
+                  color: "#fff",
+                  border: "1px solid #004CCC",
+                  textTransform: "capitalize",
+                  ":hover": {
+                    border: "1px solid #004CCC",
+                    color: "#004CCC",
+                    background: "#fff",
+                  },
+                }}
+              >
+                Add to wishlist
+              </Button>
+            </Card>
+          ))}
+        </Stack>
       </Box>
+    );
+  }
+  return (
+    <Stack width={"95%"} marginX="auto" pb={3}>
+      <Header />
+      <ActionCard />
+      <FeaturedItems />
     </Stack>
   );
 }

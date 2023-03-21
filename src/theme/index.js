@@ -21,7 +21,7 @@ const theme = createTheme({
       main: red.A400,
     },
     gray: {
-      // 100: "#EAECF0",
+      100: "#98A2B3",
       200: "#475467",
       300: "#EAECF0",
       400: "#D0D5DD",
