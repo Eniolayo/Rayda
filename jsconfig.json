@@ -2,9 +2,9 @@
   "compilerOptions": {
     "paths": {
       "@*": ["./src/*"],
-      "@feature/*": ["./src/feature*"],
-      "@components/*": ["./src/components*"],
-      "@theme/*": ["./src/theme*"]
+      "@feature/*": ["./src/feature/*"],
+      "@components/*": ["./src/components/*"],
+      "@theme/*": ["./src/theme/*"]
     }
   }
 }

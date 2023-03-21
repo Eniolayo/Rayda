@@ -38,6 +38,17 @@ const theme = createTheme({
   typography: {
     fontFamily: IBMPlexSans.style.fontFamily,
   },
+  breakpoints: {
+    values: {
+      xxs: 0, // small phone
+      xs: 300, // phone
+      sm: 600,
+      m: 700, // tablets
+      md: 900, // small laptop
+      lg: 1200, // desktop
+      xl: 1536, // large screens
+    },
+  },
 });
 
 export default theme;
