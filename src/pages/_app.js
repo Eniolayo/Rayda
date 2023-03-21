@@ -3,7 +3,6 @@ import Head from "next/head";
 import "@/styles/globals.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@theme/";
-import { CacheProvider } from "@emotion/react";
 import { ThemeProvider } from "@mui/material/styles";
 import { store } from "../store/";
 import { Provider } from "react-redux";

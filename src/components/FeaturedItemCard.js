@@ -44,7 +44,6 @@ function FeaturedItemCard({ bid, image, name, title }) {
       >
         {title}
       </Typography>
-
       <Stack
         direction={"row"}
         mt={1}
